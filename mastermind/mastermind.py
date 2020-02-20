@@ -18,10 +18,10 @@ while playing:
 
   if game.is_correct_solution(new_row):
     playing = False
-    print("YOU WON in {} guesses!".format(
+    print("YOU WON in {} guesses!\n".format(
       game.get_number_of_rows()
     ))
-
+    break
   # add to game
   game.add_row(new_row)
   print(game)
