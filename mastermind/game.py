@@ -15,9 +15,15 @@ class Game:
     values = []
     for n in range(4):
       values.append(str(random.randint(1, 8)))
-    secret_code = Row(values)
-    return secret_code
+    self.secret_code = Row(values)
+    # doesn't need to return anything
+    return self.secret_code
 
-  def add_row(self, guess):
-    row = Row(list(guess))
-    self.rows.append(row)
+  def add_row(self, new_row):
+    self.rows.append(new_row)
+
+  def is_correct_solution(self, new_row):
+    return str(self.secret_code) == str(new_row)
+
+  def get_number_of_rows(self):
+    return len(self.rows)
