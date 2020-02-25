@@ -31,13 +31,12 @@ class Row:
         checked_code_values[index] = 1
 
     for i, guess_value in enumerate(guess_values):
-      if not checked_guess_values[i]:
-        for j, code_value in enumerate(code_values):
-          if not checked_code_values[j]:
-            if guess_value == code_value:
-              white_count += 1
-              checked_guess_values[i] = 1
-              checked_code_values[j] = 1
+      for j, code_value in enumerate(code_values):
+        if not checked_code_values[j] and not checked_guess_values[i]:
+          if guess_value == code_value:
+            white_count += 1
+            checked_guess_values[i] = 1
+            checked_code_values[j] = 1
 
 
     self.keys = {
