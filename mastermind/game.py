@@ -6,7 +6,7 @@ class Game:
     self.rows = []
 
   def __str__(self):
-    game_view = '\nYour Guesses:\n'
+    game_view = '\n\n--------------\nYour Guesses:\n'
     for row in self.rows:
       game_view += (str(row) + '\n')
     return game_view
@@ -23,7 +23,7 @@ class Game:
     self.rows.append(new_row)
 
   def is_correct_solution(self, new_row):
-    return str(self.secret_code) == str(new_row)
+    return self.secret_code.values == new_row.values
 
   def get_number_of_rows(self):
     return len(self.rows)
