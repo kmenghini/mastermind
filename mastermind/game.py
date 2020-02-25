@@ -16,8 +16,6 @@ class Game:
     for n in range(4):
       values.append(str(random.randint(1, 8)))
     self.secret_code = Row(values)
-    # doesn't need to return anything
-    return self.secret_code
 
   def add_row(self, new_row):
     self.rows.append(new_row)

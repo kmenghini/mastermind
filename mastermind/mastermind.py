@@ -6,13 +6,9 @@ playing = True
 print("\nLet's Play Mastermind\n")
 game = Game()
 print("Creating secret code...\n")
-# should not store solution
-solution = game.get_secret_code()
-# should not print solution
-print(solution)
+game.get_secret_code()
 
 while playing:
-  # take input guess
   guess = str(input("Enter your guess: "))
 
   if len(guess) == 4:
